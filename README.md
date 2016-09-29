@@ -1,20 +1,7 @@
 
-
-                                                                                                        
-8888888 8888888888  8 8888           8 888888888o   8 8888      88     ,o888888o.        ,o888888o.     
-      8 8888        8 8888           8 8888    `88. 8 8888      88    8888     `88.   . 8888     `88.   
-      8 8888        8 8888           8 8888     `88 8 8888      88 ,8 8888       `8. ,8 8888       `8b  
-      8 8888        8 8888           8 8888     ,88 8 8888      88 88 8888           88 8888        `8b 
-      8 8888        8 8888           8 8888.   ,88' 8 8888      88 88 8888           88 8888         88 
-      8 8888        8 8888           8 8888888888   8 8888      88 88 8888           88 8888         88 
-      8 8888        8 8888           8 8888    `88. 8 8888      88 88 8888           88 8888        ,8P 
-      8 8888        8 8888           8 8888      88 ` 8888     ,8P `8 8888       .8' `8 8888       ,8P  
-      8 8888        8 8888           8 8888    ,88'   8888   ,d8P     8888     ,88'   ` 8888     ,88'   
-      8 8888        8 8888           8 888888888P      `Y88888P'       `8888888P'        `8888888P'     
-
-
-
-
-Ti Buco is a remake of linset by vk496 with less bugs and more features. It's compatible with the latest release of Kali (Rolling)
+Ti Buco è un fork di fluxion by deltaxflux, permette di affettuare attacchi di tipo evil.
+Interamente in italiano.
+Ottima integrazione con Kali Rolling 2016.2
+Corretti diversi bug, come il problema con mdk3 e hostapd.
 
 
