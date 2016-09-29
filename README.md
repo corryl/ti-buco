@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
                                                                                                         
@@ -18,3 +19,9 @@
 Ti Buco is a remake of linset by vk496 with less bugs and more features. It's compatible with the latest release of Kali (Rolling)
 
 
+=======
+# ti-buco
+prova
+prova
+prova
+>>>>>>> 847b5dce5b26460469a2e8618321aea8b204082e

@@ -3710,7 +3710,7 @@ function preattack {
 echo "interface=$WIFI
 driver=nl80211
 ssid=$Host_SSID
-channel=$(echo $Host_CHAN + 1)
+channel=$Host_CHAN
 ">$DUMP_PATH/hostapd.conf
 
 # Creates PHP
@@ -3940,8 +3940,9 @@ function attack {
 
 		ifconfig $WIFI down
 		sleep 0.4
-		macchanger --mac=${mac::13}$nomac${mac:14:4} $WIFI &> $flux_output_device
-		sleep 0.4
+		#macchanger --mac=${mac::13}$nomac${mac:14:4} $WIFI &> $flux_output_device
+		macchanger -r $WIFI &> $flux_output_device
+                sleep 0.4
 		ifconfig $WIFI up
 		sleep 0.4
 	fi
