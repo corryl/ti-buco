@@ -284,8 +284,9 @@ function top(){
 	conditional_clear
 	echo -e "$blue#########################################################"
 	echo -e "$blue#                                                       #"
-  echo -e "$blue#  $red    FLUXION $version" "${yellow} ${red}  < F""${yellow}luxion" "${red}I""${yellow}s" "${red}T""${yellow}he ""${red}F""${yellow}uture >     "          ${blue}"  #"
+  echo -e "$blue#  $red    FLUXION $version" "${yellow} ${red}  < F""${yellow}luxion" "${red}I""${yellow}s" "${red}T""${yellow}he ""${red}F""${yellow}uture  >     "           ${blue}"  #"
 	echo -e "$blue#"${yellow} by "${red}D""${yellow}eltax", "${red}"S""${yellow}"trasharo and "${red}A""${yellow}patheticEuphoria"           "    ${blue}#""
+	echo -e "$blue#"${yellow} mod by "${red}x""${yellow}0n3"-"${red}"h""${yellow}"4ck"                                                       "                                     ${blue}#"""
 	echo -e "$blue#                                                       #"
 	echo -e "$blue#########################################################""$transparent"
 	echo
@@ -710,6 +711,7 @@ function language {
 		echo -e "      "$blue"4)"$transparent" Turkish    "
 		echo -e "      "$blue"5)"$transparent" Spanish    "
 		echo -e "      "$blue"6)"$transparent" Chinese   "
+		echo -e "      "$blue"7)"$transparent" Italian   "
 		echo "                                       "
 		echo -n "      #> "
 		read yn
@@ -721,7 +723,8 @@ function language {
 			4 ) turkish; break;;
 			5 ) spain; break;;
 			6 ) chinese; break;;
-			* ) echo "Unknown option. Please choose again"; conditional_clear ;;
+			7 ) italian; break;;
+			* ) echo "Opzione sconosciuta. Scegli ancora"; conditional_clear ;;
 		  esac
 	done
 }
@@ -1049,6 +1052,59 @@ function chinese {
 	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	selection_1="活动的客户端"
 	selection_2="选择一个目标. 重扫 按$red r$transparent"
+	setinterface
+}
+
+function italian {
+	header_setinterface="Seleziona l'interfaccia"
+	setinterface_error="Non sono state rilevate interfacce, controlla airmon oppure verifica l'USB"
+
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_choosescan="Seleziona il canale"
+	choosescan_option_1="Tutti i canali"
+	choosescan_option_2="Canale specifico"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	scanchan_option_1="Canale singolo"
+	scanchan_option_2="Canali multipli"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_scan="WIFI Monitor"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_scanchan="Scansione dei Target"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_askAP="Seleziona opzione di Attacco"
+	askAP_option_1="FakeAP - Hostapd ("$red"Raccomandato)"
+	askAP_option_2="FakeAP - airbase-ng (Slower connection)"
+	askAP_option_3="WPS-SLAUGHTER - Bruteforce WPS Pin"
+	askAP_option_4="Bruteforce - (Handshake is required)"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_askauth="METODO DI VERIFICA PASSWORD"
+	askauth_option_1="Handshake ("$red"Raccomandato)"
+	askauth_option_2="Wpa_supplicant(Potrebbe Fallire)"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_deauthforce="Handshake check"
+	deauthforce_option_1="aircrack-ng (Molte chance)"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_deauthMENU="*Cattura Handshake*"
+	deauthMENU_option_1="Verifica handshake"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	header_webinterface="Seleziona l'opzione"
+	header_ConnectionRESET="Seleziona la Login Page"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	general_back="Indietro"
+	general_error_1="Non trovata"
+	general_case_error="Opzione Sconosciuta. Scegli ancora"
+	general_exitmode="Cancellazione e chiusura"
+	general_exitmode_1="Disabilitazione interfaccia monitor"
+	general_exitmode_2="Disabilitazione interfaccia"
+	general_exitmode_3="Disabilitazione "$grey"forwarding of packets"
+	general_exitmode_4="Pulizia "$grey"iptables"
+	general_exitmode_5="Ripristino "$grey"tput"
+	general_exitmode_6="Riavvio "$grey"Network-Manager"
+	general_exitmode_7="Pulizia terminata con successo!"
+	general_exitmode_8="Grazie per aver usato Ti Buco!"
+	# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	selection_1="Clients attivi"
+	selection_2="Seleziona il target. Per riscansionare premi $red r$transparent"
 	setinterface
 }
 # Choose Interface
