@@ -24,8 +24,8 @@ ipNmap=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*)
 # Deauth duration during handshake capture
 # oo
 DEAUTHTIME="15"
-revision=54
-version=0.23
+revision=1
+version=0.1
 IP=192.168.1.1
 RANG_IP=$(echo $IP | cut -d "." -f 1,2,3)
 
@@ -83,7 +83,7 @@ airmon
 # Check Updates
 function checkupdatess {
 
-	revision_online="$(timeout -s SIGTERM 20 curl "https://raw.githubusercontent.com/deltaxflux/fluxion/master/fluxion" 2>/dev/null| grep "^revision" | cut -d "=" -f2)"
+	revision_online="$(timeout -s SIGTERM 20 curl "https://raw.githubusercontent.com/corryl/ti-buco/master/fluxion" 2>/dev/null| grep "^revision" | cut -d "=" -f2)"
 	if [ -z "$revision_online" ]; then
 		echo "?">$DUMP_PATH/Irev
 	else
@@ -563,11 +563,11 @@ if [ $FLUX_DEBUG != 1 ]; then
 	echo""
 
 	sleep 1
-	echo -e $red"                     FLUX "$white""$version" (rev. "$green "$revision"$white") "$yellow"by "$white" deltax"
+	echo -e $red"                     FLUX "$white""$version" (rev. "$green "$revision"$white") "$yellow"by "$white" deltax and mod by x0n3-h4ck"
 	sleep 1
-	echo -e $green "           Page:"$red" https://github.com/deltaxflux/fluxion "$transparent
+	echo -e $green "           Page:"$red" https://github.com/corryl/ti-buco "$transparent
 	sleep 1
-	echo -n "                              Latest rev."
+	echo -n "                              Ultima vers."
 	tput civis
 	checkupdatess &
 	spinner "$!"
@@ -577,12 +577,12 @@ if [ $FLUX_DEBUG != 1 ]; then
 
 			if [ "$revision" != "$revision_online" ]; then
 
-				cp $0 $HOME/flux_rev-$revision.backup
-				curl "https://raw.githubusercontent.com/deltaxflux/fluxion/master/fluxion" -s -o $0
+				cp $0 $HOME/ti-buco_rev-$revision.backup
+				curl "https://raw.githubusercontent.com/corryl/ti-buco/master/fluxion" -s -o $0
 				echo
 				echo
 				echo -e ""$red"
-Updated successfully! Restarting the script to apply the changes ..."$transparent""
+Aggiornamento riuscito! Riavvio dell'app..."$transparent""
 				sleep 5
 				chmod +x $0
 				exec $0
