@@ -23,5 +23,5 @@ Ti Buco is a remake of linset by vk496 with less bugs and more features. It's co
 # ti-buco
 
 
-0.1   -->  primo testing su versione fixata dallo x0n3-h4ck Team
-rev 2  ->  aggiornato macchanger e fakedns redirect	
+0.1    -->  primo testing su versione fixata dallo x0n3-h4ck Team
+-rev 2 -->  aggiornato macchanger e fakedns redirect
